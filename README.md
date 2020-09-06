@@ -1,5 +1,5 @@
 # HW-D6-Animal
-Home Work for module d6 (static and base.html)
+Home Work for module d6
 
 Разворачиваем проект:
 1) скачайте репозиторий в вирутальное окружение

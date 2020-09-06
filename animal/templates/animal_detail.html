@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+<div class="h1 bg-info text-white my-text"> Питомец {{ object.name }}</div>
+{% endblock %}
+
+{% block extra_main %}
+<div class="animal row justify-content-center align-items-center">
+    <div class="first">
+        <a href="#">
+            <img height="300" width="400"
+                 src="{{ object.photo.url }}" alt="" class="fit">
+        </a>
+    </div>
+    <div class="mx-md-n5">
+        <ul>
+            <li>Кличка: <mark>{{ object.name }}</mark></li>
+            <li>Вид животного: <mark>{{ object.get_kind_display }}</mark></li>
+            <li>Возраст: <mark>{{ object.age }} (в годах)</mark></li>
+            <li>Порода: <mark>{{ object.breed }}</mark></li>
+            <li>Дата поступления: <mark>{{ object.d_receipt| date:"d M Y" }}</mark></li>
+            <li>Привит: <mark>{{ object.vaccinated | yesno:"Yes,No,maybe"}}</mark></li>
+        </ul>
+        Описание
+        <p class="font-italic text-nowrap">{{ object.describe }}</p>
+    </div>
+</div>
+{% endblock %}

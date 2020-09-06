@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+<div class="display-4 bg-info text-white">
+	<a href="{% url 'animals-list' %}" class="h3 bg-info text-white my-text"><u>Выбрать себе питомца</u></a>
+</div>
+{% endblock extra_head %}
+
+{% block extra_main %}
+	<div class="home">
+		<p class="h4 my-text">
+			{{ about_us }}
+		</p>
+	<img class="img-rounded m-x-auto" src='{{ STATIC_URL }}{{img_url}}' width="430vh" height="550vw">
+</div>
+{% endblock %}

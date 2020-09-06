@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+<div class="h1 bg-info text-white">Наши питомцы </div>
+{% endblock %}
+
+{% block extra_main %}
+<div class="main-content">
+    
+    {% for obj in object_list %}   
+    <div class="col-lg-4">
+        <a href="{{ obj.get_absolute_url }}">
+            <img height="200" width="200"
+                 src="{{ obj.photo.url }}" alt="" class="fit">
+        </a>
+        <p class="font-italic text-nowrap">
+            Кличка: <a href="{{ obj.get_absolute_url }}"> <ins><strong>{{ obj.name }}</strong></ins></a>
+        </p>
+    </div>
+    {% endfor %}
+</div>
+
+{% if not object_list%}
+    <div class="main-content-empty">Все питомцы нашли своих хозяев!</div> 
+{%endif%}
+{% endblock %}
